@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Tracker</title>
+    <link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+    <div class="teams-container">
+        <div class="team team-one">
+            <h2>Team One</h2>
+            <button id="tmonethreeptbtn" class="point-btn">+3</button>
+            <button id="tmoneoneptbtn" class="point-btn">+1</button>
+            <h3>Round Score</h3>
+            <div class="score" id="teamonecount">0</div>
+            <button class="reset-btn">Reset</button>
+        </div>
+        
+        <div class="team team-two">
+            <h2>Team Two</h2>
+            <button id="tmtwothreeptbtn" class="point-btn">+3</button>
+            <button id="tmtwooneptbtn" class="point-btn">+1</button>
+            <h3>Round Score</h3>
+            <div class="score" id="teamtwocount">0</div>
+            <button class="reset-btn">Reset</button>
+        </div>
+    </div>
+    
+    <div class="scoreboard">
+        <h2>Scoreboard</h2>
+        <div class="scoreboard-content">
+            <div class="team-score">
+                <h3>Team One Total</h3>
+                <div class="score" id="teamonescore">0</div>
+            </div>
+            <div class="team-score">
+                <h3>Team Two Total</h3>
+                <div class="score" id="teamtwoscore">0</div>
+            </div>
+        </div>
+        <button id="endround" class="round-btn">End Round</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
