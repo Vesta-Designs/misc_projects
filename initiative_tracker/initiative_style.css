@@ -1,0 +1,206 @@
+/* initiative_style.css */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #f5f0e1; /* Parchment background */
+  color: #3a3226; /* Dark brown text */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Character boxes */
+.character-template {
+  background-color: #f8f4e9; /* Light parchment */
+  border: 3px solid #6b8c42; /* Leafy green border */
+  border-radius: 8px;
+  padding: 15px;
+  margin: 15px 0;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+
+.character-template::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 1px solid #c9b7a2; /* Light brown accent */
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.character-template h1 {
+  color: #5a7247; /* Forest green */
+  font-size: 1.2rem;
+  margin: 8px 0;
+  border-bottom: 1px dashed #c9b7a2; /* Light brown */
+  padding-bottom: 5px;
+}
+
+/* Buttons */
+button {
+  background-color: #6b8c42; /* Leafy green */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Georgia', serif;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: #5a7247; /* Darker green */
+  transform: translateY(-1px);
+}
+
+.damage-btn { background-color: #8c4242; } /* Reddish for damage */
+.heal-btn { background-color: #428c6b; } /* Teal for heal */
+.remove-btn { background-color: #6b428c; } /* Purple for remove */
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #f8f4e9;
+  margin: 15% auto;
+  padding: 25px; /* Equal padding all around */
+  border: 3px solid #6b8c42;
+  border-radius: 8px;
+  width: 85%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  color: #5a7247;
+  margin-top: 0;
+  text-align: center;
+}
+
+.modal-content input {
+  width: calc(100% - 20px); /* Account for padding */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #c9b7a2;
+  border-radius: 4px;
+  background-color: #fffdf9;
+}
+
+#modal-submit {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.close {
+  color: #8c6b42;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.close:hover {
+  color: #5a7247;
+}
+
+/* Layout adjustments */
+#character-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+#add-new {
+  margin: 20px 0;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+}
+
+.character-template {
+  background-color: #f8f4e9;
+  border: 3px solid #6b8c42;
+  border-radius: 12px; /* Slightly more rounded */
+  padding: 0; /* Reset padding for inner box control */
+  margin: 20px 0;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden; /* Keeps everything contained */
+}
+
+/* Inner content box */
+.character-content {
+  background-color: #fffdf9;
+  border: 2px solid #c9b7a2;
+  border-radius: 8px;
+  margin: 12px;
+  padding: 15px;
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+}
+
+/* Header ribbon effect */
+.character-header {
+  background-color: #6b8c42;
+  color: white;
+  padding: 8px 15px;
+  margin: 0;
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.character-header::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: linear-gradient(to bottom right, transparent 49%, #6b8c42 50%);
+}
+
+/* Stats grid layout */
+.character-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.character-stats h1 {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+/* Action buttons container */
+.character-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f0e9d8;
+  border-top: 1px dashed #c9b7a2;
+  margin-top: 10px;
+}
+
+/* Updated modal padding */
+.modal-content {
+  padding: 25px 30px; /* Slightly more side padding */
+}

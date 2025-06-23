@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initiative Tracker</title>
+    <link rel="stylesheet" href="initiative_style.css">
+</head>
+<body>
+    <h1>D&D Initiative Tracker</h1>
+    
+    <!-- "Add New" Button -->
+    <button id="add-new">Add New Character</button>
+    
+    <!-- Character List Container -->
+    <div id="character-list">
+        <!-- Characters will be dynamically inserted here -->
+    </div>
+    
+    <!-- Modal for adding new characters -->
+    <div id="character-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Character</h2>
+            <input type="text" id="modal-name" placeholder="Character Name" required>
+            <input type="number" id="modal-hp" placeholder="Total HP" min="1" required>
+            <p type="number" id="modal-initiative"></p>
+            <button id="modal-submit">Add Character</button>
+        </div>
+    </div>
+
+    <script src="initiative_script.js"></script>
+</body>
+</body>
+</html>

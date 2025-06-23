@@ -16,8 +16,11 @@ const teamTwo = {
   totalScore: 0
 };
 
-const resetBtns = document.querySelectorAll(".reset-btn");
+const teamOneResetBtn = document.getElementById("team-one-reset-btn")
+const teamTwoResetBtn = document.getElementById("team-two-reset-btn")
 const endRoundBtn = document.getElementById("endround");
+const winScreen = document.createElement("div");
+
 
 // Update counter display
 function updateCounter(team) {
@@ -28,6 +31,7 @@ function updateCounter(team) {
 // Score functions
 function addPoints(team, points) {
   team.score += points;
+
   updateCounter(team);
 }
 
@@ -42,6 +46,8 @@ function calculateRoundScores() {
     teamTwo.totalScore += (teamTwoRound - teamOneRound);
   }
   // If equal, no points awarded
+  checkScore(teamOne);
+  checkScore(teamTwo);
   
   // Reset round scores
   teamOne.score = 0;
@@ -57,6 +63,14 @@ function resetScores(team) {
   updateCounter(team);
 }
 
+// allows for the 'busting' mechanic in cornhole
+function checkScore(team) {
+    if (team.totalScore > 21) {
+        team.totalScore = 15;
+        updateCounter(team);
+    }
+}
+
 // Event listeners
 function setupTeamListeners(team) {
   team.threePtBtn?.addEventListener("click", () => addPoints(team, 3));
@@ -66,8 +80,8 @@ function setupTeamListeners(team) {
 // Initialize
 setupTeamListeners(teamOne);
 setupTeamListeners(teamTwo);
-resetBtns.forEach(btn => btn.addEventListener("click", resetScores(teamOne)));
-resetBtns.forEach(btn => btn.addEventListener("click", resetScores(teamTwo)));
+teamOneResetBtn.addEventListener("click", () => resetScores(teamOne));
+teamTwoResetBtn.addEventListener("click", () => resetScores(teamTwo));
 endRoundBtn?.addEventListener("click", calculateRoundScores);
 
 // Initial update
